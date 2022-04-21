@@ -1,24 +1,50 @@
-# README
+# API REST "internetdascoisascomesp_api", desenvolvida em Ruby on Rails, com versionamento de recursos, e autenticação JWT. Com frontends <a href="">React</a> e <a href="">Flutter</a>. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Imagem da documentação da API 
+<img src="" width="100%" height="100%"/>
 
-Things you may want to cover:
+# Autor: Adyson Lima 
+<a href="https://www.linkedin.com/in/adyson-lima-programador/"><strong>Meu LinkedIn</strong><a>
+ 
 
-* Ruby version
+# Sobre a API
+## A documentação completa está na pasta internetdascoisascomesp_api/documentacao
 
-* System dependencies
+## Endereço da API
+<a href="">Acesse a API</a>
 
-* Configuration
+Esta API REST é documentada com **SWAGGER** e desenvolvida com **Ruby on Rails**, **TDD**, **JWT**, e **versionamento** de recursos. Ela provê recursos para dois frontends, um web, desenvolvido em **React** e outro, mobile, desenvolvido em **Flutter**. Esta API é parte de uma aplicação FullStack que provê uma plataforma de internet das coisas(IOT) voltada para microcontroladores ESP8266.
 
-* Database creation
+# Tecnologias utilizadas
 
-* Database initialization
+- Ruby
+- Ruby on Rails
+- JWT
+- Swagger
+- Postgresql
 
-* How to run the test suite
+## Implantação em produção
+- Serviço: Heroku 
+- Banco de dados: Postgresql
 
-* Services (job queues, cache servers, search engines, etc.)
+# Como executar o projeto
 
-* Deployment instructions
+## API
+Pré-requisitos: 
+- Ruby 3
+- Ruby on Rails 7
 
-* ...
+```bash
+# clonar repositório
+git clone git@github.com:Adyson-Lima-Programador/internetdascoisascomesp_api.git
+
+# entrar na pasta internetdascoisascomesp_api
+cd internetdascoisascomesp_api
+
+# instalar dependencias com bundle
+bundle
+
+# executar o projeto
+rails s
+```
+

@@ -1,7 +1,7 @@
 # API REST "internetdascoisascomesp_api", desenvolvida em Ruby on Rails, com versionamento de recursos, e autenticação JWT, para frontends <a href="">React</a> e <a href="">Flutter</a>. 
 
 ## Imagem da documentação da API 
-<img src="" width="100%" height="100%"/>
+<img src="https://github.com/Adyson-Lima-Programador/internetdascoisascomesp_api/blob/main/documentacao/imagem_documentacao-api.png" width="100%" height="100%"/>
 
 # Autor
 ## Adyson Lima. <a href="https://www.linkedin.com/in/adyson-lima-programador/">Meu LinkedIn<a>.

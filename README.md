@@ -10,7 +10,7 @@
 # Sobre a API
 ## Esta API é parte de uma aplicação FullStack que provê uma plataforma de internet das coisas(IOT) voltada para microcontroladores ESP8266. Com frontends em <a href="">React</a> e <a href="">Flutter</a>.
  
-## A documentação completa está na pasta <a href="">internetdascoisascomesp_api/documentacao</a>.
+## A documentação completa está na pasta <a href="https://github.com/Adyson-Lima-Programador/internetdascoisascomesp_api/tree/main/documentacao">internetdascoisascomesp_api/documentacao</a>.
 
 ## <a href="">Acesse aqui a API publicada no Heroku</a>.
 

@@ -1,0 +1,61 @@
+[33mcommit 432250d1e33b6863884cb089093827db5fb09682[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Merge: bc43f52 1c80ac4
+Author: Adyson-Lima-Programador <adyson_lima@yahoo.com.br>
+Date:   Wed Apr 27 17:33:30 2022 -0300
+
+    Merge branch 'main' of github.com:Adyson-Lima-Programador/internetdascoisascomesp_api
+
+[33mcommit bc43f528042791947c99efde6e261d2e494ce864[m
+Author: Adyson-Lima-Programador <adyson_lima@yahoo.com.br>
+Date:   Wed Apr 27 17:33:12 2022 -0300
+
+    5° commit - adicionada documentação completa
+
+[33mcommit 1c80ac4009b70589991f465a54bb297dedb2ead6[m
+Author: Adyson Lima <100633703+Adyson-Lima-Programador@users.noreply.github.com>
+Date:   Wed Apr 27 17:27:57 2022 -0300
+
+    Update README.md
+
+[33mcommit ab531ea4fdc7e134d20387298e62083aa642a0c8[m
+Author: Adyson-Lima-Programador <adyson_lima@yahoo.com.br>
+Date:   Wed Apr 27 17:26:02 2022 -0300
+
+    4° commit - documentação da API concluida
+
+[33mcommit 5a81d85fc7873aef6127981a389533a182e5e0d9[m[33m ([m[1;31mheroku/main[m[33m)[m
+Merge: e1a6844 4df30d3
+Author: Adyson-Lima-Programador <adyson_lima@yahoo.com.br>
+Date:   Mon Apr 25 17:50:21 2022 -0300
+
+    Merge branch 'main' of github.com:Adyson-Lima-Programador/internetdascoisascomesp_api
+
+[33mcommit e1a6844994a33f113e8f4eec7ef6898c373d7b0d[m
+Author: Adyson-Lima-Programador <adyson_lima@yahoo.com.br>
+Date:   Mon Apr 25 17:50:05 2022 -0300
+
+    3° commit - Gemfile e config/database.yml ajustados para Heroku
+
+[33mcommit 4df30d366142f3100c42acf57aba03be4703b4e7[m
+Author: Adyson Lima <100633703+Adyson-Lima-Programador@users.noreply.github.com>
+Date:   Fri Apr 22 22:13:53 2022 -0300
+
+    Update README.md
+
+[33mcommit 2e6706319897ad5ee9089826da5ae744ed4639df[m
+Author: Adyson Lima <100633703+Adyson-Lima-Programador@users.noreply.github.com>
+Date:   Fri Apr 22 20:18:59 2022 -0300
+
+    Update README.md
+
+[33mcommit 2f1dbe2594b0444903e46e8241da2704af36a2ef[m
+Author: Adyson-Lima-Programador <adyson_lima@yahoo.com.br>
+Date:   Thu Apr 21 19:49:55 2022 -0300
+
+    2° commit - readme modificado
+
+[33mcommit 9ac19569d6a6a1a67fcdd39f585ac7d411392ca4[m
+Author: Adyson-Lima-Programador <adyson_lima@yahoo.com.br>
+Date:   Thu Apr 21 19:34:01 2022 -0300
+
+    1° commit - projeto criado

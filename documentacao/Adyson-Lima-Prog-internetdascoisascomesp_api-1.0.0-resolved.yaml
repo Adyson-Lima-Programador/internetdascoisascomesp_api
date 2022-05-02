@@ -1,0 +1,344 @@
+---
+swagger: "2.0"
+info:
+  description: Essa API provê recursos para uma plataforma de internet das coisas voltada para o microcontrolador ESP8266.
+  version: 1.0.0
+  title: internetdascoisascomesp_api
+schemes:
+- https
+produces:
+- application/json
+paths:
+  /api/v1/logins:
+    post:
+      tags:
+      - Logins
+      summary: Possibilita o login do usuário.
+      description: |
+        URL de login **(https://internetdascoisascomesp.herokuapp.com/API/V1/logins)**.
+      parameters:
+      - in: body
+        name: email, password
+        description: email e senha de acesso.
+        required: true
+        schema:
+          $ref: '#/definitions/Login'
+      responses:
+        "200":
+          description: Login realizado com sucesso!
+          schema:
+            $ref: '#/definitions/Message'
+        "401":
+          description: Não foi possível fazer o login!
+          schema:
+            $ref: '#/definitions/Message'
+  /api/v1/users:
+    get:
+      tags:
+      - Users
+      summary: Retorna todos os usuários. Pode retornar com paginação.
+      description: |
+        URL **sem** paginação que retorna todos os usuários **(https://internetdascoisascomesp.herokuapp.com/API/V1/users)**.
+        URL **com** paginação que retorna 10 usuários por página **(https://internetdascoisascomesp.herokuapp.com/API/V1/users?page=numero_da_pagina)**.
+      parameters:
+      - name: page
+        in: query
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: usuários encontrados ou página encontrada!
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+        "500":
+          description: usuários não encontrados ou página não encontrada!
+          schema:
+            $ref: '#/definitions/Message'
+    post:
+      tags:
+      - Users
+      summary: Cria um usuário.
+      description: |
+        URL para criar usuário **(https://internetdascoisascomesp.herokuapp.com/API/V1/users)**.
+      parameters:
+      - in: body
+        name: user
+        description: Objeto usuário.
+        required: true
+        schema:
+          $ref: '#/definitions/User'
+      responses:
+        "201":
+          description: Usuário criado com sucesso!
+          schema:
+            $ref: '#/definitions/User'
+        "500":
+          description: Não foi possível criar usuário!
+          schema:
+            $ref: '#/definitions/Message'
+  /api/v1/users/{id}:
+    get:
+      tags:
+      - Users
+      summary: Mostra apenas um usuário localizado pelo id.
+      description: |
+        URL de pesquisa por id **(https://internetdascoisascomesp.herokuapp.com/API/V1/users/id)**
+      parameters:
+      - name: id
+        in: path
+        description: ID do usuário.
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: Usuário encontrado!
+          schema:
+            $ref: '#/definitions/User'
+        "500":
+          description: Usuário não encontrado!
+          schema:
+            $ref: '#/definitions/Message'
+    delete:
+      tags:
+      - Users
+      summary: Exclui um usuário.
+      description: |
+        URL para excluir um usuário **(https://internetdascoisascomesp.herokuapp.com/API/V1/users/id)**.
+      parameters:
+      - name: id
+        in: path
+        description: ID do usuário.
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: Usuário excluído com sucesso!
+        "500":
+          description: Não foi possível excluir o usuário!
+          schema:
+            $ref: '#/definitions/Message'
+    patch:
+      tags:
+      - Users
+      summary: Atualiza um usuário.
+      description: |
+        URL para atualizar um usuário **(https://internetdascoisascomesp.herokuapp.com/API/V1/users/id)**.
+      parameters:
+      - name: id
+        in: path
+        description: Id do usuário.
+        required: true
+        type: integer
+      - in: body
+        name: user
+        description: Objeto usuário.
+        required: true
+        schema:
+          $ref: '#/definitions/User'
+      responses:
+        "200":
+          description: Usuário atualizado com sucesso!
+          schema:
+            $ref: '#/definitions/User'
+        "500":
+          description: Não foi possível atualizar o usuário!
+          schema:
+            $ref: '#/definitions/Message'
+  /api/v1/devices:
+    get:
+      tags:
+      - Devices
+      summary: Retorna todos os dispositivos. Pode retornar com paginação.
+      description: |
+        URL **sem** paginação que retorna todos os dispositivos **(https://internetdascoisascomesp.herokuapp.com/API/V1/devices)**.
+        URL **com** paginação que retorna 10 dispositivos por página **(https://internetdascoisascomesp.herokuapp.com/API/V1/devices?page=numero_da_pagina)**.
+      parameters:
+      - name: page
+        in: query
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: dispositivos encontrados ou página encontrada!
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Device'
+        "500":
+          description: dispositivos não encontrados ou página não encontrada!
+          schema:
+            $ref: '#/definitions/Message'
+    post:
+      tags:
+      - Devices
+      summary: Cria um dispositivo.
+      description: |
+        URL para criar um dispositivo **(https://internetdascoisascomesp.herokuapp.com/API/V1/devices)**.
+      parameters:
+      - in: body
+        name: device
+        description: Objeto dispositivo.
+        required: true
+        schema:
+          $ref: '#/definitions/Device'
+      responses:
+        "201":
+          description: Dispositivo criado com sucesso!
+          schema:
+            $ref: '#/definitions/Device'
+        "500":
+          description: Não foi possivel criar dispositivo!
+          schema:
+            $ref: '#/definitions/Message'
+  /api/v1/devices/{id}:
+    get:
+      tags:
+      - Devices
+      summary: Mostra apenas um dispositivo localizado pelo id ou user_id.
+      description: |
+        URL de pesquisa por id **(https://internetdascoisascomesp.herokuapp.com/API/V1/devices/id)**.
+        URL de pesquisa por user_id **(https://internetdascoisascomesp.herokuapp.com/API/V1/devices/user_id)**.
+      parameters:
+      - name: id
+        in: path
+        description: ID do dispositivo ou id do usuário dono do dispositivo.
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: Dispositivo encontrado!
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Device'
+        "500":
+          description: Dispsitivo não encontrado!
+          schema:
+            $ref: '#/definitions/Message'
+    delete:
+      tags:
+      - Devices
+      summary: Exclui um dispositivo.
+      description: |
+        URL para excluir um dispositivo **(https://internetdascoisascomesp.herokuapp.com/API/V1/devices/id)**.
+      parameters:
+      - name: id
+        in: path
+        description: ID do dispositivo.
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: Dispositivo excluído com sucesso!
+        "500":
+          description: Não foi possivel excluir o dispositivo!
+          schema:
+            $ref: '#/definitions/Message'
+    patch:
+      tags:
+      - Devices
+      summary: Atualiza um dispositivo.
+      description: |
+        URL para atualizar um dispositivo **(https://internetdascoisascomesp.herokuapp.com/API/V1/devices/id)**.
+      parameters:
+      - name: id
+        in: path
+        description: Id do dispositivo.
+        required: true
+        type: integer
+      - in: body
+        name: device
+        description: Objeto dispositivo.
+        required: true
+        schema:
+          $ref: '#/definitions/Device'
+      responses:
+        "200":
+          description: Dispositivo atualizado com sucesso!
+          schema:
+            $ref: '#/definitions/Device'
+        "500":
+          description: Não foi possivel atualizar o dispositivo!
+          schema:
+            $ref: '#/definitions/Message'
+definitions:
+  Login:
+    type: object
+    required:
+    - email
+    - password
+    properties:
+      email:
+        type: string
+        example: usuario@gmail.com
+        description: Nome do usuário
+      password:
+        type: string
+        example: 1@3GmI8
+        description: Senha do usuário
+  User:
+    type: object
+    required:
+    - category
+    - email
+    - name
+    - password
+    properties:
+      id:
+        type: integer
+        description: Código do usuário
+      name:
+        type: string
+        description: Nome do usuário
+      email:
+        type: string
+        description: Email do usuário
+      password:
+        type: string
+        description: Senha do usuário
+      category:
+        type: string
+        description: Categoria de usuário
+  Device:
+    type: object
+    required:
+    - category
+    - name
+    - request_count
+    - status
+    - user_id
+    properties:
+      id:
+        type: integer
+        description: Código do dispositivo.
+      name:
+        type: string
+        example: Controlador de portas
+        description: Nome do dispositivo.
+      description:
+        type: string
+        example: ESP8266 controlador da porta da garagem
+        description: Descrição do dispositivo.
+      user_id:
+        type: integer
+        description: Código do usuário proprietário do dispositivo.
+      status:
+        type: string
+        example: "1"
+        description: Status do dispositivo (1 ligado e 0 desligado) ou valor recebido de um sensor remoto.
+      request_count:
+        type: integer
+        description: Número de requisições feitas pelo dispositivo
+      category:
+        type: string
+        description: Categoria do dispositivo (send, receive)
+  Message:
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      message:
+        type: string

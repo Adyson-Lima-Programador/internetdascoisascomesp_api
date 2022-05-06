@@ -12,7 +12,7 @@
  
 ## A documentação completa está na pasta <a href="https://github.com/Adyson-Lima-Programador/internetdascoisascomesp_api/tree/main/documentacao">internetdascoisascomesp_api/documentacao</a>.
 
-## <a href="">Acesse aqui a API publicada no Heroku</a>.
+## <a href="https://internetdascoisascomesp.herokuapp.com">Acesse aqui a API publicada no Heroku</a>.
 
 # Tecnologias utilizadas
 

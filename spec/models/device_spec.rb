@@ -2,7 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Device, type: :model do
 
-  before { @device = Device.new }
+  before {     
+    
+    @device = Device.new
+    @user = User.create(id:1,name:"Jose",email:"jose@gmail.com",password:"123",category:"admin")
+      
+   }
   
   describe "Teste de preenchimento dos campos do model Device" do
     
@@ -36,6 +41,29 @@ RSpec.describe Device, type: :model do
       expect(@device.category).to eq("send")
     end
 
+  end
+
+  describe "Teste de validação do model Device de acordo com documentação" do
+
+    it "Device valido com campos obrigatorios preenchidos" do
+            
+      @device.name = "Controle de luz"
+      @device.description = "Controle de luzes da casa"
+      @device.user_id = @user.id
+      @device.status = "0"
+      @device.request_count = 1200
+      @device.category = "send"
+      expect(@device).to be_valid
+            
+    end
+
+    it "Device invalido com campos obrigatorios em branco" do
+
+      device = Device.new
+      expect(device).to be_invalid
+      
+    end
+    
   end
 
 end

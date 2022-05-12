@@ -34,6 +34,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
       post :create, params: {user: {name: @user.name, email: @user.email, password: @user.password, category: @user.category  }, format: :json }
       expect(response.body).to include_json(name: @user.name, email: @user.email, password: @user.password, category: @user.category)
+      expect(response).to have_http_status(201)
       
     end
 

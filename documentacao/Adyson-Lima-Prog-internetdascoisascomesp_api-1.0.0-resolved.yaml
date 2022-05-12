@@ -27,7 +27,7 @@ paths:
         "200":
           description: Login realizado com sucesso!
           schema:
-            $ref: '#/definitions/Message'
+            $ref: '#/definitions/Message_Login_Success'
         "401":
           description: Não foi possível fazer o login!
           schema:
@@ -337,6 +337,16 @@ definitions:
   Message:
     type: object
     properties:
+      status:
+        type: integer
+        format: int32
+      message:
+        type: string
+  Message_Login_Success:
+    type: object
+    properties:
+      token:
+        type: string
       status:
         type: integer
         format: int32

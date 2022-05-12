@@ -32,9 +32,9 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
     it "Consegue criar um usuario e retorna status 201" do
 
-      user_params = attributes_for(@user)
-      post :create, params: {user: user_params}
-    
+      post :create, params: {user: {name: @user.name, email: @user.email, password: @user.password, category: @user.category  }, format: :json }
+      expect(response.body).to include_json(name: @user.name, email: @user.email, password: @user.password, category: @user.category)
+      
     end
 
   end

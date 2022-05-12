@@ -20,6 +20,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
         get :show, params: {id: @user.id}
         expect(response.body).to include_json(id: 1)
+        expect(response).to have_http_status(200)
       
       end
 

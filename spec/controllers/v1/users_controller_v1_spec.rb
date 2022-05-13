@@ -58,8 +58,9 @@ RSpec.describe Api::V1::UsersController, type: :controller do
     it "Consegue apagar um usuario e retorna status 204" do
       
       user = User.last
-      delete :destroy, params: {id: user.id} 
-
+      delete :destroy, params: {id: user.id}
+      expect(response).to have_http_status(204) 
+      expect(User.all).not_to include user
 
     end
 

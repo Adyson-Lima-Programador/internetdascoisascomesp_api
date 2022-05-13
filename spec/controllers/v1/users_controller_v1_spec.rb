@@ -45,8 +45,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
     it "Consegue atualizar um usuário e retorna status 200" do
 
       user = User.last
-      user.name = user.name + " Luis"
-      patch :update, params: {user: {name: user.name}}
+      patch :update, params: {user:{name: "Jose Luis", email: user.email, password: user.password, category: user.category}, id: user.id}
       expect(response.body).to include_json(name: "Jose Luis")
 
     end

@@ -52,5 +52,17 @@ RSpec.describe Api::V1::UsersController, type: :controller do
     end
   
   end
+
+  describe "DELETE /api/v1/users/{id}" do
+
+    it "Consegue apagar um usuario e retorna status 204" do
+      
+      user = User.last
+      delete :destroy, params: {id: user.id} 
+
+
+    end
+
+  end
     
 end

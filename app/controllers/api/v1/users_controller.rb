@@ -4,7 +4,16 @@ class Api::V1::UsersController < ApplicationController
 
   def index
 
-    @users = User.all
+    # Se há pedido de paginação, retorna paginação pedida
+    # Aceita requisições: localhost:3000/api/v1/users?page=1&per_page=10
+    if(params[:page])  
+      page = (params[:page] || 1).to_i
+      per_page = (params[:per_page] || 10).to_i
+      @users = User.all.page(page).per(per_page)
+    # Se não há pedido de paginação, retorna todos os usuarios
+    else
+      @users = User.all
+    end
     render json: @users
 
   end

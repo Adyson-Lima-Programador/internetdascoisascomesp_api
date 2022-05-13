@@ -47,6 +47,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       user = User.last
       patch :update, params: {user:{name: "Jose Luis", email: user.email, password: user.password, category: user.category}, id: user.id}
       expect(response.body).to include_json(name: "Jose Luis")
+      expect(response).to have_http_status(200)
 
     end
   

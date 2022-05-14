@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::UsersController, type: :controller do
 
-  before{ @user = User.create(name:"Jose",email:"jose@gmail.com",password:"123",category:"admin")}
+  before { @user = User.create(name:"Jose",email:"jose@gmail.com",password:"123",category:"admin")}
 
   describe "GET /api/v1/users" do
   

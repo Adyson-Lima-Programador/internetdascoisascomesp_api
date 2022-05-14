@@ -39,6 +39,7 @@ RSpec.describe Api::V1::DevicesController, type: :controller do
 
       post :create, params: {device: {name: @device.name, description: @device.description, user_id: @device.user_id, status: @device.status, request_count: @device.request_count, category: @device.category }, format: :json}
       expect(response.body).to include_json(name: @device.name, description: @device.description, user_id: @device.user_id, status: @device.status, request_count: @device.request_count, category: @device.category)
+      expect(response).to have_http_status(201)
 
     end
 

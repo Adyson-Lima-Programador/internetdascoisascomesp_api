@@ -11,7 +11,7 @@ RSpec.describe Api::V1::DevicesController, type: :controller do
 
   describe "GET /api/v1/devices" do
 
-    it "Consegue listar todos os usuarios e retorna status 200" do
+    it "Consegue listar todos os dispositivos e retorna status 200" do
       
       get :index
       expect(JSON.parse(response.body).size).to eq(1)
@@ -19,6 +19,17 @@ RSpec.describe Api::V1::DevicesController, type: :controller do
 
     end
 
-  end 
+  end
+  
+  describe "GET /api/v1/devices/{id}" do
+
+    it "Consegue listar um dispositivo especifico e retorna status 200" do
+
+      get :show, params: {id: @device.id}
+      expect(response.body).to include_json(id: @device.id)
+
+    end
+
+  end
 
 end

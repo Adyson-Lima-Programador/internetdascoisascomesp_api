@@ -26,7 +26,17 @@ class Api::V1::DevicesController < ApplicationController
 
   def create
 
-    
+    @device = Device.new(device_params)
+
+    if @device.save
+
+      render json: @device, status: :created, location: api_v1_device_url(@device)
+
+    else
+
+      render json: @device.errors, status: :internal_server_error
+
+    end
 
   end
 

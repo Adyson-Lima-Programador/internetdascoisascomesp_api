@@ -20,7 +20,7 @@ class Api::V1::DevicesController < ApplicationController
 
   def show
 
-    
+    render json: @device
 
   end
 

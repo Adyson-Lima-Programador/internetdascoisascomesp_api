@@ -24,6 +24,12 @@ class Api::V1::DevicesController < ApplicationController
 
   end
 
+  def create
+
+    
+
+  end
+
 private
   
 def set_device

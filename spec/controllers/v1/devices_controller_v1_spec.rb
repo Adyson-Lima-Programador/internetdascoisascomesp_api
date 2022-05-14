@@ -33,4 +33,15 @@ RSpec.describe Api::V1::DevicesController, type: :controller do
 
   end
 
+  describe "POST /api/v1/devices/{id}" do
+
+    it "Consegue criar um dispositivo e retorna status 201" do
+
+      post :create, params: {device: {name: @device.name, description: @device.description, user_id: @device.user_id, status: @device.status, request_count: @device.request_count, category: @device.category }, format: :json}
+      expect(response.body).to include_json(name: @device.name, description: @device.description, user_id: @device.user_id, status: @device.status, request_count: @device.request_count, category: @device.category)
+
+    end
+
+  end
+
 end

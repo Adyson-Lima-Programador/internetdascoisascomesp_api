@@ -14,6 +14,8 @@ RSpec.describe Api::V1::DevicesController, type: :controller do
     it "Consegue listar todos os usuarios e retorna status 200" do
       
       get :index
+      expect(JSON.parse(response.body).size).to eq(1)
+      
 
     end
 

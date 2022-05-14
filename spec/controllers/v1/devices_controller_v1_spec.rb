@@ -27,6 +27,7 @@ RSpec.describe Api::V1::DevicesController, type: :controller do
 
       get :show, params: {id: @device.id}
       expect(response.body).to include_json(id: @device.id)
+      expect(response).to have_http_status(200)
 
     end
 

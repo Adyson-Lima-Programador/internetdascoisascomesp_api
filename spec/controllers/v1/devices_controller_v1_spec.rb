@@ -15,7 +15,7 @@ RSpec.describe Api::V1::DevicesController, type: :controller do
       
       get :index
       expect(JSON.parse(response.body).size).to eq(1)
-      
+      expect(response).to have_http_status(200)
 
     end
 

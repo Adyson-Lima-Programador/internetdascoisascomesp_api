@@ -53,7 +53,12 @@ class Api::V1::DevicesController < ApplicationController
     end
 
   end
-  
+
+  def destroy
+
+    @device.destroy
+
+  end
 
 private
   

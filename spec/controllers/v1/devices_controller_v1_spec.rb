@@ -52,6 +52,7 @@ RSpec.describe Api::V1::DevicesController, type: :controller do
       device = Device.last
       patch :update, params: {device: {name: "Controle central", description: @device.description, user_id: @device.user_id, status: @device.status, request_count: @device.request_count, category: @device.category }, id: device.id}
       expect(response.body).to include_json(name: "Controle central")
+      expect(response).to have_http_status(200)
     end
 
   end

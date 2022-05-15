@@ -64,6 +64,7 @@ RSpec.describe Api::V1::DevicesController, type: :controller do
       device = Device.last
       delete :destroy, params: {id: device.id}
       expect(response).to have_http_status(204)
+      expect(Device.all).not_to include device
 
     end
 

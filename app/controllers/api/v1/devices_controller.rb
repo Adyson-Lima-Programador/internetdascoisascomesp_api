@@ -42,7 +42,15 @@ class Api::V1::DevicesController < ApplicationController
 
   def update
 
-    
+    if @device.update(device_params)
+
+      render json: @device
+
+    else
+
+      render json: @device.errors, status: :internal_server_error
+
+    end
 
   end
 

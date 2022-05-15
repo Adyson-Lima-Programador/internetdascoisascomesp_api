@@ -57,4 +57,16 @@ RSpec.describe Api::V1::DevicesController, type: :controller do
 
   end
 
+  describe "DELETE /api/v1/devices/{id}" do
+
+    it "Consegue apagar um dispositivo e retorna status 204" do
+
+      device = Device.last
+      delete :destroy, params: {id: device.id}
+      expect(response).to have_http_status(204)
+
+    end
+
+  end
+
 end

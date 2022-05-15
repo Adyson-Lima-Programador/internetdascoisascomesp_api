@@ -1,37 +1,38 @@
 # ************** SQLITE3 **********************
-default: &default
-  adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-
-development:
-  <<: *default
-  database: db/development.sqlite3
-
-test:
-  <<: *default
-  database: db/test.sqlite3
-
-production:
-  <<: *default
-  database: db/production.sqlite3
-
-# ************** POSTGRESQL **********************
-# URL padrão: https://internetdascoisascomesp.herokuapp.com/
 # default: &default
-#   adapter: postgresql
-#   encoding: unicode
+#   adapter: sqlite3
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   timeout: 5000
 
 # development:
 #   <<: *default
-#   database: internetdascoisascomesp_development
+#   database: db/development.sqlite3
 
 # test:
 #   <<: *default
-#   database: internetdascoisascomesp_test
+#   database: db/test.sqlite3
 
 # production:
 #   <<: *default
-#   database: internetdascoisascomesp_production
-#   username: internetdascoisascomesp
-#   password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
+#   database: db/production.sqlite3
+
+# ************** POSTGRESQL **********************
+# URL padrão: https://internetdascoisascomesp.herokuapp.com/
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+  database: internetdascoisascomesp_development
+
+test:
+  <<: *default
+  database: internetdascoisascomesp_test
+
+production:
+  <<: *default
+  database: internetdascoisascomesp_production
+  username: internetdascoisascomesp
+  password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>

@@ -287,138 +287,169 @@ a {
 <div id="div_group_2" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_2" class="passed">GET /api/v1/devices</dt>
-    <script type="text/javascript">moveProgressBar('4.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue listar todos os dispositivos e retorna status 200</span><span class='duration'>0.05779s</span></dd>
+    <script type="text/javascript">moveProgressBar('4.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue listar todos os dispositivos e retorna status 200</span><span class='duration'>0.05768s</span></dd>
   </dl>
 </div>
 <div id="div_group_3" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_3" class="passed">GET /api/v1/devices/{id}</dt>
-    <script type="text/javascript">moveProgressBar('8.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue listar um dispositivo especifico e retorna status 200</span><span class='duration'>0.00889s</span></dd>
+    <script type="text/javascript">moveProgressBar('8.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue listar um dispositivo especifico e retorna status 200</span><span class='duration'>0.01592s</span></dd>
   </dl>
 </div>
 <div id="div_group_4" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_4" class="passed">POST /api/v1/devices/{id}</dt>
-    <script type="text/javascript">moveProgressBar('12.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue criar um dispositivo e retorna status 201</span><span class='duration'>0.01274s</span></dd>
+  <dt id="example_group_4" class="passed">POST /api/v1/devices</dt>
+    <script type="text/javascript">moveProgressBar('12.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue criar um dispositivo e retorna status 201</span><span class='duration'>0.01237s</span></dd>
   </dl>
 </div>
 <div id="div_group_5" class="example_group passed">
-  <dl style="margin-left: 0px;">
-  <dt id="example_group_5" class="passed">Api::V1::LoginsController</dt>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_5" class="passed">PATCH /api/v1/devices/{id}</dt>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_5');</script>
+    <script type="text/javascript">makeRed('example_group_5');</script>
+    <script type="text/javascript">moveProgressBar('16.0');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">Consegue atualizar um dispositivo e retorna status 200</span>
+      <span class="duration">0.00847s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>  Failure/Error: expect(response.body).to include_json(name: &quot;Controle central&quot;)
+
+  JSON::ParserError:
+    859: unexpected token at &#39;&#39;
+  # /usr/local/rvm/gems/ruby-3.1.1/gems/rspec-json_expectations-2.2.0/lib/rspec/json_expectations/matchers.rb:13:in `traverse&#39;
+  # /usr/local/rvm/gems/ruby-3.1.1/gems/rspec-json_expectations-2.2.0/lib/rspec/json_expectations/matcher_factory.rb:13:in `block (2 levels) in define_matcher&#39;
+  # ./spec/controllers/v1/devices_controller_v1_spec.rb:54:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>/usr/local/rvm/gems/ruby-3.1.1/gems/rspec-json_expectations-2.2.0/lib/rspec/json_expectations/matchers.rb:13:in `traverse&#39;
+/usr/local/rvm/gems/ruby-3.1.1/gems/rspec-json_expectations-2.2.0/lib/rspec/json_expectations/matcher_factory.rb:13:in `block (2 levels) in define_matcher&#39;
+./spec/controllers/v1/devices_controller_v1_spec.rb:54:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">11</span>
+<span class="linenum">12</span>    representation = actual
+<span class="offending"><span class="linenum">13</span>    representation = JSON.parse(actual) if String === actual</span>
+<span class="linenum">14</span>
+<span class="linenum">15</span>    RSpec::JsonExpectations::JsonTraverser.traverse(
+<span class="linenum">16</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_6" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_6" class="passed">POST /api/v1/logins</dt>
-    <script type="text/javascript">moveProgressBar('16.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue acessar Controller logins</span><span class='duration'>0.00360s</span></dd>
-    <script type="text/javascript">moveProgressBar('20.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">Controller retorna status 200</span><span class='duration'>0.00308s</span></dd>
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_6" class="passed">Api::V1::LoginsController</dt>
   </dl>
 </div>
 <div id="div_group_7" class="example_group passed">
-  <dl style="margin-left: 0px;">
-  <dt id="example_group_7" class="passed">Api::V1::UsersController</dt>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_7" class="passed">POST /api/v1/logins</dt>
+    <script type="text/javascript">moveProgressBar('20.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue acessar Controller logins</span><span class='duration'>0.00370s</span></dd>
+    <script type="text/javascript">moveProgressBar('24.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Controller retorna status 200</span><span class='duration'>0.00287s</span></dd>
   </dl>
 </div>
 <div id="div_group_8" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_8" class="passed">GET /api/v1/users</dt>
-    <script type="text/javascript">moveProgressBar('25.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue listar todos os usuarios e retorna status 200</span><span class='duration'>0.00599s</span></dd>
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_8" class="passed">Api::V1::UsersController</dt>
   </dl>
 </div>
 <div id="div_group_9" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_9" class="passed">GET /api/v1/users/{id}</dt>
-    <script type="text/javascript">moveProgressBar('29.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue listar um usuario especifico e retorna status 200</span><span class='duration'>0.02511s</span></dd>
+  <dt id="example_group_9" class="passed">GET /api/v1/users</dt>
+    <script type="text/javascript">moveProgressBar('28.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue listar todos os usuarios e retorna status 200</span><span class='duration'>0.02599s</span></dd>
   </dl>
 </div>
 <div id="div_group_10" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_10" class="passed">POST /api/v1/users</dt>
-    <script type="text/javascript">moveProgressBar('33.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue criar um usuario e retorna status 201</span><span class='duration'>0.00716s</span></dd>
+  <dt id="example_group_10" class="passed">GET /api/v1/users/{id}</dt>
+    <script type="text/javascript">moveProgressBar('32.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue listar um usuario especifico e retorna status 200</span><span class='duration'>0.00606s</span></dd>
   </dl>
 </div>
 <div id="div_group_11" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_11" class="passed">PATCH /api/v1/users/{id}</dt>
-    <script type="text/javascript">moveProgressBar('37.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue atualizar um usuário e retorna status 200</span><span class='duration'>0.00890s</span></dd>
+  <dt id="example_group_11" class="passed">POST /api/v1/users</dt>
+    <script type="text/javascript">moveProgressBar('36.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue criar um usuario e retorna status 201</span><span class='duration'>0.00698s</span></dd>
   </dl>
 </div>
 <div id="div_group_12" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_12" class="passed">DELETE /api/v1/users/{id}</dt>
-    <script type="text/javascript">moveProgressBar('41.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue apagar um usuario e retorna status 204</span><span class='duration'>0.01175s</span></dd>
+  <dt id="example_group_12" class="passed">PATCH /api/v1/users/{id}</dt>
+    <script type="text/javascript">moveProgressBar('40.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue atualizar um usuário e retorna status 200</span><span class='duration'>0.00912s</span></dd>
   </dl>
 </div>
 <div id="div_group_13" class="example_group passed">
-  <dl style="margin-left: 0px;">
-  <dt id="example_group_13" class="passed">Device</dt>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_13" class="passed">DELETE /api/v1/users/{id}</dt>
+    <script type="text/javascript">moveProgressBar('44.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue apagar um usuario e retorna status 204</span><span class='duration'>0.01170s</span></dd>
   </dl>
 </div>
 <div id="div_group_14" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_14" class="passed">Teste de preenchimento dos campos do model Device</dt>
-    <script type="text/javascript">moveProgressBar('45.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">name preenchido</span><span class='duration'>0.00307s</span></dd>
-    <script type="text/javascript">moveProgressBar('50.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">description preenchido</span><span class='duration'>0.00248s</span></dd>
-    <script type="text/javascript">moveProgressBar('54.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">user_id preenchido</span><span class='duration'>0.00275s</span></dd>
-    <script type="text/javascript">moveProgressBar('58.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">status preenchido</span><span class='duration'>0.00240s</span></dd>
-    <script type="text/javascript">moveProgressBar('62.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">request_count preenchido</span><span class='duration'>0.00275s</span></dd>
-    <script type="text/javascript">moveProgressBar('66.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">category preenchido</span><span class='duration'>0.00241s</span></dd>
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_14" class="passed">Device</dt>
   </dl>
 </div>
 <div id="div_group_15" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_15" class="passed">Teste de validação do model Device de acordo com documentação</dt>
-    <script type="text/javascript">moveProgressBar('70.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">Device valido com campos obrigatorios preenchidos</span><span class='duration'>0.00363s</span></dd>
-    <script type="text/javascript">moveProgressBar('75.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">Device invalido com campos obrigatorios em branco</span><span class='duration'>0.00380s</span></dd>
+  <dt id="example_group_15" class="passed">Teste de preenchimento dos campos do model Device</dt>
+    <script type="text/javascript">moveProgressBar('48.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">name preenchido</span><span class='duration'>0.00276s</span></dd>
+    <script type="text/javascript">moveProgressBar('52.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">description preenchido</span><span class='duration'>0.00288s</span></dd>
+    <script type="text/javascript">moveProgressBar('56.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">user_id preenchido</span><span class='duration'>0.00241s</span></dd>
+    <script type="text/javascript">moveProgressBar('60.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">status preenchido</span><span class='duration'>0.00276s</span></dd>
+    <script type="text/javascript">moveProgressBar('64.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">request_count preenchido</span><span class='duration'>0.00243s</span></dd>
+    <script type="text/javascript">moveProgressBar('68.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">category preenchido</span><span class='duration'>0.00279s</span></dd>
   </dl>
 </div>
 <div id="div_group_16" class="example_group passed">
-  <dl style="margin-left: 0px;">
-  <dt id="example_group_16" class="passed">User</dt>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_16" class="passed">Teste de validação do model Device de acordo com documentação</dt>
+    <script type="text/javascript">moveProgressBar('72.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Device valido com campos obrigatorios preenchidos</span><span class='duration'>0.00334s</span></dd>
+    <script type="text/javascript">moveProgressBar('76.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Device invalido com campos obrigatorios em branco</span><span class='duration'>0.00403s</span></dd>
   </dl>
 </div>
 <div id="div_group_17" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_17" class="passed">Teste de preenchimento dos campos do model User</dt>
-    <script type="text/javascript">moveProgressBar('79.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">name preenchido</span><span class='duration'>0.00089s</span></dd>
-    <script type="text/javascript">moveProgressBar('83.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">email preenchido</span><span class='duration'>0.00074s</span></dd>
-    <script type="text/javascript">moveProgressBar('87.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">password preenchido</span><span class='duration'>0.00078s</span></dd>
-    <script type="text/javascript">moveProgressBar('91.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">category preenchido</span><span class='duration'>0.00099s</span></dd>
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_17" class="passed">User</dt>
   </dl>
 </div>
 <div id="div_group_18" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_18" class="passed">Teste de validação do model User de acordo com documentação</dt>
-    <script type="text/javascript">moveProgressBar('95.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">User valido com campos obrigatorios preenchidos</span><span class='duration'>0.00088s</span></dd>
-    <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">User invalido com campos obrigatorios em branco</span><span class='duration'>0.00086s</span></dd>
+  <dt id="example_group_18" class="passed">Teste de preenchimento dos campos do model User</dt>
+    <script type="text/javascript">moveProgressBar('80.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">name preenchido</span><span class='duration'>0.00085s</span></dd>
+    <script type="text/javascript">moveProgressBar('84.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">email preenchido</span><span class='duration'>0.00066s</span></dd>
+    <script type="text/javascript">moveProgressBar('88.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">password preenchido</span><span class='duration'>0.00080s</span></dd>
+    <script type="text/javascript">moveProgressBar('92.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">category preenchido</span><span class='duration'>0.00091s</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.18286 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "24 examples, 0 failures";</script>
+<div id="div_group_19" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_19" class="passed">Teste de validação do model User de acordo com documentação</dt>
+    <script type="text/javascript">moveProgressBar('96.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">User valido com campos obrigatorios preenchidos</span><span class='duration'>0.00087s</span></dd>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">User invalido com campos obrigatorios em branco</span><span class='duration'>0.00110s</span></dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.21052 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "25 examples, 1 failure";</script>
 </div>
 </div>
 </body>

@@ -40,6 +40,12 @@ class Api::V1::DevicesController < ApplicationController
 
   end
 
+  def update
+
+    
+
+  end
+
 private
   
 def set_device

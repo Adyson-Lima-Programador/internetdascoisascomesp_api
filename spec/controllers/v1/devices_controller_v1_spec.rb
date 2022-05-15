@@ -33,7 +33,7 @@ RSpec.describe Api::V1::DevicesController, type: :controller do
 
   end
 
-  describe "POST /api/v1/devices/{id}" do
+  describe "POST /api/v1/devices" do
 
     it "Consegue criar um dispositivo e retorna status 201" do
 
@@ -41,6 +41,17 @@ RSpec.describe Api::V1::DevicesController, type: :controller do
       expect(response.body).to include_json(name: @device.name, description: @device.description, user_id: @device.user_id, status: @device.status, request_count: @device.request_count, category: @device.category)
       expect(response).to have_http_status(201)
 
+    end
+
+  end
+
+  describe "PATCH /api/v1/devices/{id}" do
+
+    it "Consegue atualizar um dispositivo e retorna status 200" do
+
+      device = Device.last
+      patch :update, params: {device: {name: "Controle central", description: @device.description, user_id: @device.user_id, status: @device.status, request_count: @device.request_count, category: @device.category }, id: device.id}
+      expect(response.body).to include_json(name: "Controle central")
     end
 
   end

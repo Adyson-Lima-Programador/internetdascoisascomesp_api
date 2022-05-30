@@ -1,4 +1,4 @@
-# API REST "internetdascoisascomesp_api", desenvolvida em Ruby on Rails, com versionamento de recursos, e autenticação JWT, para frontends <a href="">React</a> e <a href="">Flutter</a>. 
+# API REST "internetdascoisascomesp_api", desenvolvida em Ruby on Rails, com versionamento de recursos, e autenticação JWT, para frontends <a href="https://github.com/Adyson-Lima-Programador/internetdascoisascomesp_web">React</a> e <a href="">Flutter</a>. 
 
 ## Imagem da documentação da API 
 <img src="https://github.com/Adyson-Lima-Programador/internetdascoisascomesp_api/blob/main/documentacao/imagem_documentacao-api.png" width="100%" height="100%"/>
@@ -11,7 +11,7 @@
  
 
 # Sobre a API
-## Esta API é parte de uma aplicação FullStack que provê uma plataforma de internet das coisas(IOT) voltada para microcontroladores ESP8266. Com frontends em <a href="">React</a> e <a href="">Flutter</a>.
+## Esta API é parte de uma aplicação FullStack que provê uma plataforma de internet das coisas(IOT) voltada para microcontroladores ESP8266. Com frontends em <a href="https://github.com/Adyson-Lima-Programador/internetdascoisascomesp_web">React</a> e <a href="">Flutter</a>.
  
 ## A documentação completa está na pasta <a href="https://github.com/Adyson-Lima-Programador/internetdascoisascomesp_api/tree/main/documentacao">internetdascoisascomesp_api/documentacao</a>.
 
